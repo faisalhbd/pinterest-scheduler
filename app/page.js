@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Footer from "./components/Footer"
 
 export default function Home() {
   const [boards, setBoards] = useState([])
@@ -58,6 +59,7 @@ export default function Home() {
   const label = { fontWeight: 600, fontSize: 13 }
 
   return (
+    <>
     <main style={{ maxWidth: 560, margin: "40px auto", fontFamily: "system-ui, sans-serif", padding: "0 16px" }}>
       <h1 style={{ color: "#e60023" }}>📌 Pin Scheduler</h1>
       <p style={{ color: "#555" }}>
@@ -132,13 +134,60 @@ export default function Home() {
         </>
       )}
 
-      <p style={{ marginTop: 40, fontSize: 12, color: "#888" }}>
-        <a href="/freekit-pin-scheduler-privacy-policy">Privacy Policy</a>
-        {" · "}
-        <a href="/freekit-pin-scheduler-terms">Terms of Service</a>
-        {" · "}
-        <a href="mailto:ifaisal.eth@gmail.com">Contact</a>
-      </p>
+      {/* Features */}
+      <section style={{ marginTop: 56 }}>
+        <h2 style={{ fontSize: 20 }}>What Pin Scheduler does</h2>
+        <ul style={{ color: "#444", lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>Connect your own Pinterest business account with the official Pinterest OAuth login.</li>
+          <li>Create a new pin, or pick an existing board, using the official Pinterest API v5.</li>
+          <li>Choose a future date and time to schedule a pin, or publish it right away.</li>
+          <li>Nothing is posted automatically in bulk — you review and submit every single pin yourself.</li>
+        </ul>
+      </section>
+
+      {/* How it works */}
+      <section style={{ marginTop: 32 }}>
+        <h2 style={{ fontSize: 20 }}>How it works</h2>
+        <ol style={{ color: "#444", lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>Click "Connect Pinterest" and sign in through Pinterest's official authorization page.</li>
+          <li>Pick or create the board you want to pin to.</li>
+          <li>Fill in the title, description, destination link, and image for your pin.</li>
+          <li>Choose a schedule time, or leave it blank to publish immediately.</li>
+        </ol>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" style={{ marginTop: 32 }}>
+        <h2 style={{ fontSize: 20 }}>FAQ</h2>
+
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>Is Pin Scheduler free to use?</p>
+        <p style={{ color: "#444", marginTop: 0 }}>Yes, Pin Scheduler is a free tool by Freekit.</p>
+
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>Do you store my Pinterest password?</p>
+        <p style={{ color: "#444", marginTop: 0 }}>
+          No. We never see or store your password. Login happens entirely through Pinterest's
+          own official OAuth authorization page.
+        </p>
+
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>Where is my data stored?</p>
+        <p style={{ color: "#444", marginTop: 0 }}>
+          Your Pinterest access token is stored only in a secure, httpOnly cookie in your own
+          browser. We don't keep a copy of your pins, boards, or account data on our servers.
+        </p>
+
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>Can I disconnect my account at any time?</p>
+        <p style={{ color: "#444", marginTop: 0 }}>
+          Yes. Use the "Disconnect" link in the app, or revoke access anytime from your
+          Pinterest account settings.
+        </p>
+
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>Who can I contact for support?</p>
+        <p style={{ color: "#444", marginTop: 0 }}>
+          Email <a href="mailto:info@freekit.online">info@freekit.online</a> with any questions.
+        </p>
+      </section>
     </main>
+    <Footer />
+    </>
   )
 }
