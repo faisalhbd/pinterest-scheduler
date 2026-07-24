@@ -60,7 +60,16 @@ export default function Home() {
   return (
     <main style={{ maxWidth: 560, margin: "40px auto", fontFamily: "system-ui, sans-serif", padding: "0 16px" }}>
       <h1 style={{ color: "#e60023" }}>📌 Pin Scheduler</h1>
-      <p style={{ color: "#555" }}>Schedule Pinterest pins via the official Pinterest API v5.</p>
+      <p style={{ color: "#555" }}>
+        Connect your own Pinterest business account to create and schedule pins to your
+        boards using the official Pinterest API v5.
+      </p>
+      <p style={{ color: "#999", fontSize: 13, marginTop: -6 }}>
+        A free tool by{" "}
+        <a href="https://freekit.online" style={{ color: "#999" }}>
+          freekit.online
+        </a>
+      </p>
 
       {!connected ? (
         <a href="/api/auth/login" style={{ display: "inline-block", background: "#e60023", color: "#fff", padding: "12px 24px", borderRadius: 24, textDecoration: "none", fontWeight: 700 }}>
@@ -124,7 +133,11 @@ export default function Home() {
       )}
 
       <p style={{ marginTop: 40, fontSize: 12, color: "#888" }}>
-        <a href="/privacy">Privacy Policy</a>
+        <a href="/freekit-pin-scheduler-privacy-policy">Privacy Policy</a>
+        {" · "}
+        <a href="/freekit-pin-scheduler-terms">Terms of Service</a>
+        {" · "}
+        <a href="mailto:ifaisal.eth@gmail.com">Contact</a>
       </p>
     </main>
   )
